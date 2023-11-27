@@ -3,6 +3,7 @@
 ## Índice
 
 - [Introdução](#introdução)
+- [Observação](#observação)
 - [Requisitos](#requisitos)
 - [Instalação](#instalação)
 - [Gráficos](#gráficos)
@@ -18,6 +19,24 @@ Para dar vida a essa visão, empreguei um conjunto robusto de bibliotecas, inclu
 Ao longo do projeto, explorei algoritmos genéticos, otimização por subida de encosta (hill climb) e simulated annealing, utilizando inteligência artificial para ajustar dinamicamente a carteira ao longo do tempo.
 
 O objetivo final é desenvolver uma estratégia de investimento inteligente e automatizada, capaz de se adaptar às mudanças do mercado e otimizar os retornos financeiros.
+
+## Observação
+
+
+O sharp ratio é uma medida de desempenho de investimento que mede a relação entre o retorno de um investimento e o risco associado a ele. É calculado como a razão entre o excesso de retorno do investimento sobre o retorno livre de risco e a volatilidade do investimento.
+
+A fórmula do sharp ratio é a seguinte:
+
+Sharp Ratio = (Retorno do Investimento - Retorno Livre de Risco) / Volatilidade do Investimento
+Onde:
+
+Retorno do Investimento é o retorno do investimento, após o ajuste da inflação.
+Retorno Livre de Risco é o retorno de um investimento sem risco, como um título do governo.
+Volatilidade do Investimento é a medida da variação do retorno do investimento.
+Um sharp ratio positivo indica que o investimento teve um retorno superior ao retorno livre de risco, ajustado pelo risco. Um sharp ratio maior indica que o investimento teve um retorno superior ao retorno livre de risco, ajustado pelo risco, de forma mais significativa.
+
+No arquivo fitness.py podemos observar que o Sharp Ratio é calculado de uma forma um pouco diferente. Tenho dados de todas as empresas desde 2012. Com isso, pude escolher atribuir pesos com referência a quão mais próximos os dados estão do presente. Os pesos em ordem a partir de 2012 são [1, 1, 1, 1, 1, 1, 2, 2, 3, 3, 4, 5]. Portanto, o Sharp Ratio dos últimos 4 anos é mais importante que o Sharp Ratio de 10 anos atrás. Para gerar os pesos para cada empresa, é preciso inicializar o arquivo.ipynb correspondente ao método de ML utilizado.
+
 ## Requisitos
 
 Para instalar as bibliotecas utilizadas no projeto, você precisará de:
@@ -71,3 +90,4 @@ Gráfico de Correlação Empresas:
 Gráfico de Correlação Indicadores:
 
 ![Gráfico de Correlação Indicadores](img/corr_indicators.png)
+
